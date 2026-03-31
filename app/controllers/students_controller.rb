@@ -1,0 +1,34 @@
+class StudentsController < ApplicationController
+
+  def index
+    @students = Student.all
+  end 
+
+  def new
+    @student = Student.new
+  end
+
+  def create
+    @student = Student.new(student_params)
+
+    if @student.save
+      redirect_to students_path   # ✔ success के बाद list page
+    else
+      render :new                 # ❌ error होने पर form वापस
+    end
+  end
+
+  private
+
+  def student_params
+    params.require(:student).permit(
+      :first_name,
+      :last_name,
+      :email,
+      :phone_number,
+      :address,
+      :adhar
+    )
+  end
+
+end
