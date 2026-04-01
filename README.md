@@ -1,24 +1,16 @@
-# README
+🎓 Student Management System (Rails)
+📌 Overview
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Student Management System developed using Ruby on Rails.
+It allows users to manage student records efficiently with basic CRUD operations.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+🚀 Features
+➕ Add new students
+📄 View student details
+✏️ Edit student information
+❌ Delete student records
+✅ Form validations (email uniqueness, presence, etc.)
+🛠️ Tech Stack
+Ruby on Rails
+SQLite (Database)
+HTML, CSS (Frontend)
