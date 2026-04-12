@@ -22,3 +22,10 @@ student = Student.create(
     phone_number: "123456789#{i+1}"
   )
 end
+
+Student.all.each do |student|
+  student.blogs.create(title: "Blog Title for #{student.first_name}", contant: "This is the contant of the blog for #{student.first_name}.")
+  student.blogs.create(title: "Blog Title for #{student.first_name}", contant: "This is the contant of the blog for #{student.first_name}.")
+end 
+
+StudentProject.create(student_id: 1, project_id: 1, submission_date: Date.today + 7.days)
