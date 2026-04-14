@@ -1,13 +1,10 @@
-
-
-<%= form_with model: student do |form| %>
-
-  <%= student.errors.full_messages %>
-
-   <% if @student.errors.any? %>
-  <% @student.errors.full_messages.each do |message| %>
-    <p style="color:red;"><%= message %></p>
-  <% end %>
+ <%= form_with(model: @student, local: true) do |form| %>
+ <% if @student.errors.any? %>
+  <div style="color:red;">
+    <% @student.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+    <% end %>
+  </div>
 <% end %>
 
   <div>
@@ -30,17 +27,18 @@
     <%= form.date_field :date_of_birth %>
   </div>
 
-    <div>
-        <%= form.label :address %>
-        <%= form.text_field :address %>
-    </div>
+  <div>
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
 
-    <div>
-        <%= form.label :contact %>
-        <%= form.text_field :contact %>
-    </div>
+  <div>
+    <%= form.label :contact %>
+    <%= form.text_field :contact %>
+  </div>
 
-   <div>
-     <%= form.submit %>
-   </div>
+  <div>
+    <%= form.submit %>
+  </div>
+
 <% end %>

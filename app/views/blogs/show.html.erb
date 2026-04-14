@@ -1,0 +1,19 @@
+<h1>Blog Details</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @blog.description %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @blog.student&.first_name %>
+</p>
+
+<%= link_to "Back", blogs_path %> |
+<%= link_to "Edit", edit_blog_path(@blog) %>

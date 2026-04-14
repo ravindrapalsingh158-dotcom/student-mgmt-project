@@ -1,0 +1,26 @@
+<h1>All Blogs</h1>
+
+<%= link_to "New Blog", new_blog_path %>
+
+<table border="1">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Student</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @blogs.each do |blog| %>
+    <tr>
+      <td><%= blog.title %></td>
+      <td><%= blog.description %></td>
+      <td><%= blog.student&.first_name %></td>
+
+      <td>
+        <%= link_to "Show", blog_path(blog) %> |
+        <%= link_to "Edit", edit_blog_path(blog) %> |
+        <%= link_to "Delete", blog_path(blog), method: :delete, data: { confirm: "Are you sure?" } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
