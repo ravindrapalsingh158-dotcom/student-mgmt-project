@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :courses
   resources :students
 
-
-  namespace : admin do
+namespace :admin do
     resources :students
   end
+
 end

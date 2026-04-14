@@ -1,6 +1,12 @@
+<h1>Hello</h1>
+<button class="btn btn-success">Click</button>
+
 <h1>Student Details</h1>
 <p> <strong>name :</strong> <%= @student.full_name %> </p>
-<p> <strong>Date of Birth:</strong> <%= @student.date_of_birth %> </p>
+
+<%if @student.date_of_birth.present? %>
+<p> <strong>Date of Birth:</strong> <%= @student.date_of_birth.strftime("%A, %B %d, %Y") %> </p>
+<% end %>
 
 <p> <strong>Email:</strong> <%= @student.email %> </p>
 <p> <strong>Address:</strong> <%= @student.address %> </p>

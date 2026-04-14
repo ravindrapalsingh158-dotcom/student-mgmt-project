@@ -1,4 +1,4 @@
-
+<div class="container mt-4" >
 <p1><%= notice %></p1>
 <h1>Listing Students</h1>
 <%= link_to "New Student", new_student_path %>
@@ -27,10 +27,11 @@
         <td><%= student.date_of_birth %></td>
         <td><%= student.address %></td>
         <td><%= student.contact %></td>
-        <td><%= link_to "view", student_path(student) %></td>
-        <td><%= link_to "edit", edit_student_path(student) %></td>
-        <td><%= link_to "Delete", student_path(student), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
+        <td><%= link_to "view", student_path(student)  ,class: "btn btn-info btn-sm"%></td>
+        <td><%= link_to "edit", edit_student_path(student) ,class: "btn btn-warning btn-sm"%></td>
+        <td><%= link_to "Delete", student_path(student), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } ,class: "btn btn-danger btn-sm"%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
