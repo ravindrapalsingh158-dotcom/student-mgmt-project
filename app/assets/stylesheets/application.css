@@ -1,7 +1,66 @@
-body {
-  background-color: #f8f9fa;
+
+
+
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+
+ 
+/* ===== Hero Section ===== */
+.hero {
+  height: 100vh;
+
+  background-image: url("https://images.unsplash.com/photo-1523240795612-9a054b0db644");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 {
-  color: red;
+/* ===== Overlay ===== */
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+/* ===== Heading ===== */
+.overlay h1 {
+  color: white;
+  font-size: 42px;
+  margin-bottom: 30px;
+}
+
+/* ===== Buttons ===== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 25px;
+  font-size: 18px;
+  border-radius: 6px;
+  color: white;
+  transition: 0.3s;
+}
+
+.admin-btn {
+  background-color: #007bff;
+}
+
+.student-btn {
+  background-color: #28a745;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }

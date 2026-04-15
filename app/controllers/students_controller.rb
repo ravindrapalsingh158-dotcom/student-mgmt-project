@@ -1,5 +1,9 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+
+  before_action :authenticate_student!
+
+
   def index
     @students = Student.all
   end 
@@ -51,8 +55,12 @@ class StudentsController < ApplicationController
       :email,
       :contact,
       :address,
-      :date_of_birth
+      :date_of_birth,
+      :marks
     )
   end
 
+def dashboard
+  @student = current_student
+end
 end

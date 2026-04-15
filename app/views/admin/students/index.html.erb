@@ -1,0 +1,80 @@
+<div class="container-fluid">
+
+  <h1 class="mb-4">Admin Dashboard</h1>
+
+  <!-- 🔥 Cards Section -->
+  <div class="row mb-4">
+
+    <div class="col-md-4">
+      <div class="card text-white bg-primary shadow">
+        <div class="card-body">
+          <h5>Total Students</h5>
+          <h2><%= Student.count %></h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-white bg-success shadow">
+        <div class="card-body">
+          <h5>Total Blogs</h5>
+          <h2><%= Blog.count %></h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-white bg-warning shadow">
+        <div class="card-body">
+          <h5>Total Courses</h5>
+          <h2><%= Course.count %></h2>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 🔥 Table Section -->
+  <div class="card shadow">
+    <div class="card-header bg-dark text-white">
+      Students List
+    </div>
+
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th colspan="3">Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @students.each do |student| %>
+            <tr>
+              <td><%= student.first_name %> <%= student.last_name %></td>
+              <td><%= student.email %></td>
+
+              <td>
+                <%= link_to "View", admin_student_path(student), class: "btn btn-info btn-sm" %>
+              </td>
+
+              <td>
+                <%= link_to "Edit", edit_admin_student_path(student), class: "btn btn-warning btn-sm" %>
+              </td>
+
+              <td>
+                <%= link_to "Delete", admin_student_path(student),
+                      data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                      class: "btn btn-danger btn-sm" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+</div>

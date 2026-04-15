@@ -1,16 +1,21 @@
-<h1>Hello</h1>
-<button class="btn btn-success">Click</button>
+<div class="container mt-4">
 
-<h1>Student Details</h1>
-<p> <strong>name :</strong> <%= @student.full_name %> </p>
+  <h1>Student Details</h1>
 
-<%if @student.date_of_birth.present? %>
-<p> <strong>Date of Birth:</strong> <%= @student.date_of_birth.strftime("%A, %B %d, %Y") %> </p>
-<% end %>
+  <div class="card p-4">
 
-<p> <strong>Email:</strong> <%= @student.email %> </p>
-<p> <strong>Address:</strong> <%= @student.address %> </p>
-<p> <strong>Contact:</strong> <%= @student.contact %> </p>
-<p> <strong>age:</strong> <%= @student.age %> </p>
-<%= link_to "Back to List", students_path %> | 
-<%= link_to "Edit", edit_student_path(@student) %>
+    <p><strong>First Name:</strong> <%= @student.first_name %></p>
+    <p><strong>Last Name:</strong> <%= @student.last_name %></p>
+    <p><strong>Email:</strong> <%= @student.email %></p>
+    <p><strong>Date of Birth:</strong> <%= @student.date_of_birth %></p>
+    <p><strong>Address:</strong> <%= @student.address %></p>
+    <p><strong>Contact:</strong> <%= @student.contact %></p>
+
+    <div class="mt-3">
+      <%= link_to "Edit", edit_student_path(@student), class: "btn btn-warning" %>
+      <%= link_to "Back", students_path, class: "btn btn-secondary" %>
+    </div>
+
+  </div>
+
+</div>
