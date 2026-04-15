@@ -31,11 +31,6 @@
       
       
 
-      <% if session[:student_id] %>
-  <%= link_to "Logout", logout_path, data: { turbo_method: :delete }, class: "btn btn-danger" %>
-<% else %>
-  <%= link_to "Login", login_path, class: "btn btn-success" %>
-<% end %>
 
       </div>
     </nav>
