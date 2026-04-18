@@ -8,3 +8,18 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+.border-left-primary {
+  border-left: 5px solid #4e73df;
+}
+
+.border-left-success {
+  border-left: 5px solid #1cc88a;
+}
+
+.border-left-info {
+  border-left: 5px solid #36b9cc;
+}
+
+.border-left-warning {
+  border-left: 5px solid #f6c23e;
+}

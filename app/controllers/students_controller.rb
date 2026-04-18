@@ -1,7 +1,11 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+
+  layout "admin"
+
+
   def index
-    @students = Student.all
+    @students = Student.paginate(page: params[:page], per_page: 5)
   end 
 
   def new

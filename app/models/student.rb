@@ -55,6 +55,11 @@ class Student < ApplicationRecord
     "#{first_name} #{last_name}"
   end 
 
+
+  def self.ransackable_attributes(auth_object = nil)
+  ["first_name", "last_name", "email", "address", "contact", "date_of_birth"]
+end
+
   def age
     if date_of_birth.present?
       ((Date.today - date_of_birth).to_i / 365.25).to_i
