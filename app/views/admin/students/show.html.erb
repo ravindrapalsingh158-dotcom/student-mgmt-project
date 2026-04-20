@@ -1,5 +1,10 @@
 <div class="row mb-3">
       <div class="col-md-8 offset-md-2">
+
+<% if @student.profile_picture.attached? %>
+  <%= image_tag @student.profile_picture , class: "img-thumbnail mb-3" %> 
+<% end %>
+
 <p1><%= notice %></p1>
 <h1>Student Details</h1>
 <p> <strong>name :</strong> <%= @student.full_name %> </p>
@@ -9,7 +14,7 @@
 <p> <strong>Address:</strong> <%= @student.address %> </p>
 <p> <strong>Contact:</strong> <%= @student.contact %> </p>
 <p> <strong>age:</strong> <%= @student.age %> </p>
-<%= link_to "Back to List", students_path , class: "btn btn-secondary btn-lg" %> | 
-<%= link_to "Edit", edit_student_path(@student) , class: "btn btn-primary btn-lg" %>
+<%= link_to "Back to List",  admin_students_path , class: "btn btn-secondary btn-lg" %> | 
+<%= link_to "Edit",   edit_admin_student_path(@student) , class: "btn btn-primary btn-lg" %>
 
 </div>

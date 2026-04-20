@@ -19,6 +19,7 @@ require 'kaminari'
     @student = Student.new(student_params)
       puts params.inspect 
     if @student.save
+      CrudNotificationMailer.create_notification(@student).deliver_now
       redirect_to admin_students_path  , notice: "Student was successfully created." 
     else
       render :new                 
@@ -34,6 +35,7 @@ require 'kaminari'
   def update
    
     if @student.update(student_params)
+             CrudNotificationMailer.update_notification(@student).deliver_now
       redirect_to admin_students_path  , notice: "Student was successfully updated."
     else
       render :edit                
@@ -41,9 +43,15 @@ require 'kaminari'
   end 
 
   def destroy
+
+      Rails.logger.info "MAILER STARTED"
   
     @student.destroy
     redirect_to admin_students_path, notice: "Student was successfully deleted."
+Rails.logger.info "MAIL SENT"
+  rescue => e
+    Rails.logger.info "MAIL ERROR: #{e.message}"
+
   end
 
   def set_student  
@@ -58,7 +66,8 @@ require 'kaminari'
       :email,
       :contact,
       :address,
-      :date_of_birth
+      :date_of_birth,
+      :profile_picture,
     )
   end
 
